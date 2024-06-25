@@ -15,9 +15,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // app.use('/images', express.static('public/images'));
 
-const authRoute = require("../Tanishq-Demo-Project/BackEnd/routes/authRoute");
-const userRoute = require("../Tanishq-Demo-Project/BackEnd/routes/userRoute");
-const productRoute = require("../Tanishq-Demo-Project/BackEnd/routes/productRoute");
+const authRoute = require("./BackEnd/routes/authRoute");
+const userRoute = require("./BackEnd/routes/userRoute");
+const productRoute = require("./BackEnd/routes/productRoute");
 
 app.use("/api/auth", authRoute);
 app.use("/api/user", userRoute);
