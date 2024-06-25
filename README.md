@@ -1,1 +1,1 @@
-# Tanishq-Demo-Project
+# Tanishq-Clone
