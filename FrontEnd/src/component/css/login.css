@@ -27,6 +27,7 @@ padding:10px;
     font-size: 22px;
     font-weight: 600;
     gap: 10px;
+    color: blue;
     display: flex;
     flex-direction: column;
 }
