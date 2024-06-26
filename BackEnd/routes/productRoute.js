@@ -8,13 +8,17 @@ const router = express.Router();
 const multer  = require("multer");
 
 const storage = multer.diskStorage({
-  destination:(req,file,cb) =>{
-      cb(null,"public/images")
+  destination: (req, file, cb) => {
+    console.log("Saving file to public/images directory"); // Add this log
+    cb(null, "backend/public/images");
   },
-  filename:(req,file,cb) =>{ 
-      cb(null, Date.now() + "-" + file.originalname)
+  filename: (req, file, cb) => {
+    const filename = Date.now() + "-" + file.originalname;
+    console.log("Generated filename:", filename); // Add this log
+    cb(null, filename);
   }
-})
+});
+
 
 const upload = multer({
   storage:storage,
@@ -30,6 +34,7 @@ router.post("/", verifyTokenAndAdmin, upload.single('file'), async (req, res) =>
   const category = req.body.category
   console.log("------",req.file,title,description,price,category);
   const image = req.file.filename
+  console.log("image-----",image)
   const newProduct = new Product({
     title:title,
     description:description,
