@@ -4,37 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/public/assets/css/signin.css" />
+    <link rel="stylesheet" href="../css/signin.css" />
   </head>
   <body>
     <div class="main">
       <div class="inner-main">
         <div class="inner-main-1">
           <h1>Tanishq</h1>
-          <form action="">
-            <label for="Title"
-              >Title:
+          <form id="productForm" action="">
+            <label for="title">Title:
               <input type="text" id="title" placeholder="Title..." />
             </label>
             <label for="description"
               >description
-              <textarea
-                id="description"
-                name="description"
-                placeholder="Write something.."
+              <textarea id="description" name="description" placeholder="Write something.."
                 style="height: 100px"
               ></textarea>
             </label>
-            <label for="text"
-              >Price
+            <label for="text">Price
               <br />
-              <input type="text" name="text" id="" placeholder="Price" />
+              <input type="text" name="text" id="price" placeholder="Price" />
             </label>
 
-            <label for=""
-              >Choose a Item:
+            <label for="jewellery">Choose a Item:
               <select name="jewellery" id="jewellery">
-                <option value="...">...</option>
               </select>
             </label>
 
@@ -44,5 +37,22 @@
         </div>
       </div>
     </div>
+
+    <script src="../../reusableComponent/arrays/Categories.js"></script>
+    <script src="../js/productAdd.js"> </script>
+      
+      // const jewellerySelect = document.getElementById("jewellery");
+      
+      // categoryList.forEach(category => {
+      //   const option = document.createElement('option');
+      //   option.value = category;
+      //   option.textContent = category;
+      //   jewellerySelect.appendChild(option);
+      // });
+
+      // console.log
+
+    
+
   </body>
 </html>

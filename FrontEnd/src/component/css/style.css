@@ -107,7 +107,7 @@ body {
     width: 93vw;
     height: 2rem;
     border-radius: 5px;
-    position: relative;
+    /* position: relative; */
     background-origin: 1px solid white;
 
     font-size: 10px;
@@ -154,7 +154,7 @@ body {
     /* justify-content: center; */
     position: absolute;
     top: 50px;
-    right: 0;
+    /* right: 0; */
     z-index: 10;
   }
   .nav-link-1 {
@@ -1533,44 +1533,7 @@ body {
     color: #832729;
     font-size: 45px;
   }
-  /* main-sign.html */
-  header {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    /* padding: 10px; */
-  }
-  .main {
-    width: 80%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* margin-top: 200px; */
-    gap: 10px;
-    border: 1px solid grey;
-  }
-  .login-para {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .button {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-  }
-  .button button {
-    width: 5rem;
-    height: 2rem;
-  }
+  
 
   /* cart.css */
   .container {
@@ -1883,7 +1846,10 @@ body {
   .ano-input {
     width: 100%;
     height: 100%;
-  }
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
   .ano-input span {
     color: crimson;
     font-size: 12px;
@@ -1937,6 +1903,102 @@ body {
     font-weight: 300;
     font-size: 13px;
   }
+  .db-img{
+    width: 100%;
+    height: 100%;
+    background-color:wheat;
+    position: relative;
+    border-radius: 7p
+
+   
+  }
+  .img-in{
+    width: 50%;
+    height: 100%;
+   
+  }
+  .inside-img{
+    width: 100%;
+    height: 10rem;
+  }
+  .inside-img img{
+width: 8rem;
+height: 7rem;
+padding: 5px;
+border-radius: 20px;
+  }
+  .ad-span-p{
+    width: 100%;
+    height: 50%;
+    font-size: 12px;
+}
+.ad-span-p h4{
+  color: rgb(37, 34, 34);
+}
+.ad-span-p p{
+  color:  #76500c;
+  font-weight: 600;
+  font-size: 15px;
+
+}
+.ad-span-p span{
+  color:  #76500c;
+  font-size: 15px;
+  font-weight: 700;
+
+}
+.ad-span-p b{
+  color: black;
+  font-weight: 400;
+  font-size: 7px;
+}
+  .a-img {
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+  
+  .a-img a{
+    width: 30%;
+    position: absolute;
+  top: 120px;
+  color:#86061e;
+  font-size: 8px;
+
+  }
+  .db-all-para{
+    position: absolute;
+    top: 0px;
+    right: 0;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .db-all-para button{
+    width: 10;
+    width: 78%;
+    font-size: 13px;
+    height: 19%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-weight: 600;
+    background: #76500d;
+    color: white;
+    font-family: fraunces, serif;
+}
+.main-cart-product{
+  width: 100%;
+  height: 100%;
+}
 }
 
 /* home css */
@@ -3073,14 +3135,84 @@ body {
   .last-sec {
     display: none;
   }
+  header {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* padding: 10px; */
+  }
+  .mk-hide {
+    display: none;
+    position: absolute; /* Adjust as needed */
+    top: 50px; /* Adjust as needed */
+    left: 0; /* Adjust as needed */
+    background-color: white; /* Adjust as needed */
+    border: 1px solid #ccc; /* Adjust as needed */
+    z-index: 1000; /* Adjust as needed */
+  }
+  
+  .li-i:hover .mk-hide {
+    display: block;
+  }
+  
+  .li-i {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .main {
+    width: 14rem;
+        height: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* margin-top: 200px; */
+    gap: 10px;
+    border: 1px solid grey;
+    position: absolute;
+    top: 20px;
+    right: -81px;
+    z-index: 40;
+        background-color: whitesmoke;
+  }
+
+  .login-para {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+}
+  .button {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .button button {
+    width: 5rem;
+    height: 2rem;
+    font-size: 15px;
+
+  }
+  .fs-1{
+    background-color: crimson;
+  }
+  
 }
 
 /* Tablet Media  */
 
 @media screen and (min-width: 576px) {
-  #accountBtn {
+  /* #accountBtn {
     display: none;
-  }
+  } */
   .menu-icon {
     display: contents;
   }
@@ -5755,6 +5887,17 @@ gap: 10px;
   .nav-link-2 .li-i a p {
     display: contents;
   }
+  .li-i a {
+    font-size: 14px;
+    display: flex;
+    gap: 6px;
+}
+.main {
+ 
+  top: 34px;
+
+  right: 46px;
+}
 
   #accountBtn {
     display: contents;
@@ -6308,6 +6451,7 @@ gap: 10px;
     color: #832729;
     font-size: 33px;
   }
+
 }
 
 @media screen and (min-width: 1500px) {
@@ -6792,4 +6936,73 @@ gap: 10px;
   #id {
     color: red;
   }
+    /* main-sign.html */
+    header {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      /* padding: 10px; */
+    }
+    .mk-hide {
+      display: none;
+      position: absolute; /* Adjust as needed */
+      top: 50px; /* Adjust as needed */
+      left: 0; /* Adjust as needed */
+      background-color: white; /* Adjust as needed */
+      border: 1px solid #ccc; /* Adjust as needed */
+      z-index: 1000; /* Adjust as needed */
+    }
+    
+    .li-i:hover .mk-hide {
+      display: block;
+    }
+    
+    .li-i {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .main {
+      width: 18%;
+      height: 14rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      /* margin-top: 200px; */
+      gap: 10px;
+      border: 1px solid grey;
+      position: absolute;
+      top: 35px;
+      right: 20px;
+      background-color: whitesmoke;
+    }
+    .login-para {
+      width: 60%;
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .button {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+    .button button {
+      width: 5rem;
+      height: 2rem;
+      font-size: 15px;
+
+    }
+    .fs-1{
+      background-color: crimson;
+    }
+
 }
