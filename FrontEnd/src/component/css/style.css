@@ -69,7 +69,9 @@ body {
   }
 
   .logo-1 img {
+    display: contents;
     width: 2.5rem;
+    height: 15rem;
   }
   .li-i {
     display: flex;
