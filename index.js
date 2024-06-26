@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require('cors');
 dotenv.config();
-
+app.use(express.static('public'));
 
 PORT = process.env.PORT;
 app.use(cors());
@@ -15,9 +15,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // app.use('/images', express.static('public/images'));
 
-const authRoute = require("../Tanishq/Tanishq/BackEnd/routes/authRoute");
-const userRoute = require("../Tanishq/Tanishq/BackEnd/routes/userRoute");
-const productRoute = require("../Tanishq/Tanishq/BackEnd/routes/productRoute");
+const authRoute = require("./BackEnd/routes/authRoute");
+const userRoute = require("./BackEnd/routes/userRoute");
+const productRoute = require("./BackEnd/routes/productRoute");
 
 app.use("/api/auth", authRoute);
 app.use("/api/user", userRoute);
