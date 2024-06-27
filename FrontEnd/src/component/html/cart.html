@@ -363,33 +363,80 @@
         </div>
       </section>
 
+      <section>
+        <div class="main-cart-side">
+          <div class="main-side-1">
+            <div class="main-h2">
+              <h2>Product Details</h2>
+              <hr />
+              <p>
+                Breathe new life into your personal style with this floral
+                pendant. The chain in this image is for representative purpose
+                only and the product comes without a chain.
+              </p>
+            </div>
+            <div class="specification">
+              <h4>Specification</h4>
+              <div class="specification-arrow">
+                <i class="fa-solid fa-chevron-left"></i>
+                <i class="fa-solid fa-chevron-right"></i>
+              </div>
+            </div>
+            <div class="spec-data">
+              <div class="spec-data-1">
+                <div  class="spec-h5-span">
+                  <h5>Pendant Height:</h5>
+                  <span>0.9 cm</span>
+                </div>
+                <div class="spec-h5-span">
+                <h5>Pendant Width:</h5>
+                <span>0.6 cm</span>
+              </div>
+              <div class="spec-h5-span">
+                <h5>Diamond Clarity:</h5>
+                <span>sl2</span>
+              </div>
+              <div class="spec-h5-span">
+                <h5>Diamond Color:</h5>
+                <span>G-H</span>
+              </div>
+              <div class="spec-h5-span">
+                <h5>No Of Diamonds:</h5>
+                <span>25</span>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="main-side-2"></div>
+        </div>
+      </section>
+
       <div class="buy-cart">
         <button>Add to cart</button>
         <button class="btn-2">Buy Now</button>
       </div>
     </div>
     <script>
-  document.addEventListener("DOMContentLoaded", function() {
-  var accountBtn = document.getElementById("accountBtn");
-  var mkHide = accountBtn.querySelector(".mk-hide");
+      document.addEventListener("DOMContentLoaded", function () {
+        var accountBtn = document.getElementById("accountBtn");
+        var mkHide = accountBtn.querySelector(".mk-hide");
 
-  accountBtn.addEventListener("click", function(event) {
-    event.preventDefault(); // Prevent the default action of the anchor tag
-    if (mkHide.style.display === "none") {
-      mkHide.style.display = "contents";
-    } else {
-      mkHide.style.display = "none";
-    }
-  });
+        accountBtn.addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent the default action of the anchor tag
+          if (mkHide.style.display === "none") {
+            mkHide.style.display = "contents";
+          } else {
+            mkHide.style.display = "none";
+          }
+        });
 
-  // Close the mk-hide div when clicking outside of it
-  document.addEventListener("click", function(event) {
-    if (!accountBtn.contains(event.target)) {
-      mkHide.style.display = "none";
-    }
-  });
-});
-
+        // Close the mk-hide div when clicking outside of it
+        document.addEventListener("click", function (event) {
+          if (!accountBtn.contains(event.target)) {
+            mkHide.style.display = "none";
+          }
+        });
+      });
     </script>
   </body>
 </html>
