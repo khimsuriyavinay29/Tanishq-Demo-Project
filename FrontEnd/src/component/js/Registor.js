@@ -1,35 +1,40 @@
-// const { response } = require("express");
+function registerUser(event) {
+    event.preventDefault();
 
-document.getElementById('registrationForm').addEventListener('submit', function(event) {
-    event.preventDefault(); 
+    const email = document.getElementById('userEmail').value;
+    const userName = document.getElementById('userName').value;
+    const password = document.getElementById('userPassword').value;
 
-   
-    const formData = {
-        email: document.getElementById('userEmail').value,
-        userName: document.getElementById('userName').value,
-        password: document.getElementById('userPassword').value
+    const data = {
+        email: email,
+        userName: userName,
+        password: password
     };
+    console.log(JSON.stringify(data));
 
-    
-    fetch('http://localhost:4500/api/auth/register', {
+    fetch('http://localhost:4500/api/auth/register/', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData)
-    })
-    .then(response => response.json())
-    .then(data => {
+        body: JSON.stringify(data)
         
-        console.log('Response:', data);
-        if (data.success) {
-            document.getElementById('message').textContent = 'User registered successfully!';
-        } else {
-            document.getElementById('message').textContent = 'Registration failed. Please try again.';
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
         }
+        return response.json();
+    })
+    .then(data => {
+        alert('User registered successfully');
+        console.log(data); 
     })
     .catch(error => {
+        alert('Error registering user');
         console.error('Error:', error);
-        document.getElementById('message').textContent = 'An error occurred while registering. Please try again later.';
     });
-});
+}
+
+document.getElementById('registerForm').addEventListener('submit', registerUser);
