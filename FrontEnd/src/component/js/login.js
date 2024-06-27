@@ -31,6 +31,6 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     })
     .catch(error => {
         console.error('Error:', error);
-        document.getElementById('message').textContent = 'An error occurred while registering. Please try again later.';
+        // document.getElementById('message').textContent = 'An error occurred while registering. Please try again later.';
     });
 });
