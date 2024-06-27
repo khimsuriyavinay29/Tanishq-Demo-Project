@@ -16,12 +16,12 @@ function registerUser(event) {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json',
-        },
+            },
         body: JSON.stringify(data)
         
     })
     .then(response => {
+        console.log(response);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }

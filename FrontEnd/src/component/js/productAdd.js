@@ -36,7 +36,7 @@
             method: 'POST',
             headers: {
              // 'Content-Type': 'application/json',
-              'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzkxYzg0ZjBiYTNkMTM4NTgzOTQ0MyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcxOTI5MzExNSwiZXhwIjoxNzE5NzI1MTE1fQ.R4_oRKRRMt57l5kIMlKSv1Iml1F2GFz4BbaE2hlwR1c'
+              'Authorization': `Bearer ${localStorage.getItem("accessTokenAdmin")}`
             },
             body: formData
           });

@@ -1,1 +1,1 @@
-const categoryList =["Gold","Diamond","Earrings","Rings"];
+const categoryList =["Gold","Diamond","Earrings","Rings","Best Seller"];
