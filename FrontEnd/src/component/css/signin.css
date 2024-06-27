@@ -39,11 +39,12 @@ form{
     flex-direction: column;
     gap: 10px ;
     align-items: center;   
-    color:rgba(87, 87, 87, 0.714);    
+    color:black;  
     border: 1px solid white;
     justify-content: center;
-    background-color: #f0f8ff;
-padding: 10px;
+    background-color: #f2e9e9;
+    padding: 10px;
+    border: 0px;
 border-radius: 5px;
 
 }
@@ -64,8 +65,8 @@ flex-direction: column;
 align-items: center;
 justify-content: center;   
   border: 1px solid white;
-  background-color:whitesmoke;
-  border-radius: 5px;
+  background-color: #f2e9e9;
+    border-radius: 5px;
 }
 button{
     width: 80px;
