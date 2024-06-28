@@ -7,7 +7,8 @@ document.getElementById("loginForm").addEventListener("submit",function(event){
         userName: document.getElementById('userName').value,
         password: document.getElementById('userPassword').value
     };
-    console.log(localStorage.getItem("accessTokenAdmin"))
+    // console.log(localStorage.getItem("accessTokenAdmin"))
+    localStorage.setItem("accessTokenAdmin", "");    
 
     fetch("http://localhost:4500/api/auth/login",{
         method : "POST",
@@ -31,7 +32,7 @@ document.getElementById("loginForm").addEventListener("submit",function(event){
             if (data && data.data) {
                 const isadmin = data.data.isAdmin;
                 let accessToken = data.data.accessToken;
-                
+                console.log("----",accessToken)
                 if (isadmin) {
                     localStorage.setItem("accessTokenAdmin", accessToken);
                     window.location.href = './form-product.html';

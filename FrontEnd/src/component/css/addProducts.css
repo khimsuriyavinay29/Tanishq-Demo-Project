@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #f2e9e9;
+}
+
+.container-fluid{
+    height : 100%;
+    box-sizing: border-box;
+}
+
+.form-container{
+    width: 600px;
+    height: 100vh;
+    display: flex;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+.form-container form{
+    width: 400px;
+    border-radius: 25px;
+    background-color: #f2e9e9;
+
+}

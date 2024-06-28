@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require('cors');
 dotenv.config();
-app.use(express.static('public'));
+app.use(express.static('./BackEnd/public'));
 
 PORT = process.env.PORT;
 app.use(cors());

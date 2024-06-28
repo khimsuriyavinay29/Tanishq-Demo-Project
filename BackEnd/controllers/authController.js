@@ -28,24 +28,70 @@ const register = async (req, res) => {
   }
 };
 
+// const login = async (req, res) => {
+//   try {
+//     const { userName } = req.body;
+//     const user = await User.findOne({ userName });
+//     if (!user) {
+//       res.status(401).json({
+//         message: "User not found",
+//         success: false,
+//         error: true,
+//       });
+//     }
+//     const hashedPassword = CryptoJs.AES.decrypt(
+//       user.password,
+//       process.env.PASS_SEC
+//     );
+//     const originalPassword = hashedPassword.toString(CryptoJs.enc.Utf8);
+//     if (originalPassword !== req.body.password) {
+//       res.status(401).json({
+//         message: "Invalid password",
+//         success: false,
+//         error: true,
+//       });
+//     }
+
+//     const accessToken = jwt.sign(
+//       { id: user._id, isAdmin: user.isAdmin },
+//       process.env.JWT_SECRET,
+//       { expiresIn: "1d" }
+//     );
+//     const { password, ...otherDetails } = user._doc;
+//     res.status(200).json({
+//       data: { ...otherDetails, accessToken },
+//       message: "User logged in successfully",
+//       success: true,
+//       error: false,
+//     });
+//   } catch (error) {
+//     res.status(400).json({
+//       data: {},
+//       message: error.message,
+//       success: false,
+//       error: true,
+//     });
+//   }
+// };
+
 const login = async (req, res) => {
   try {
-    const { userName } = req.body;
+    const { userName, password } = req.body;
     const user = await User.findOne({ userName });
+
     if (!user) {
-      res.status(401).json({
+      return res.status(401).json({
         message: "User not found",
         success: false,
         error: true,
       });
     }
-    const hashedPassword = CryptoJs.AES.decrypt(
-      user.password,
-      process.env.PASS_SEC
-    );
+
+    const hashedPassword = CryptoJs.AES.decrypt(user.password, process.env.PASS_SEC);
     const originalPassword = hashedPassword.toString(CryptoJs.enc.Utf8);
-    if (originalPassword !== req.body.password) {
-      res.status(401).json({
+
+    if (originalPassword !== password) {
+      return res.status(401).json({
         message: "Invalid password",
         success: false,
         error: true,
@@ -57,15 +103,17 @@ const login = async (req, res) => {
       process.env.JWT_SECRET,
       { expiresIn: "1d" }
     );
-    const { password, ...otherDetails } = user._doc;
-    res.status(200).json({
+
+    const { password: _, ...otherDetails } = user._doc;
+
+    return res.status(200).json({
       data: { ...otherDetails, accessToken },
       message: "User logged in successfully",
       success: true,
       error: false,
     });
   } catch (error) {
-    res.status(400).json({
+    return res.status(400).json({
       data: {},
       message: error.message,
       success: false,
@@ -73,6 +121,7 @@ const login = async (req, res) => {
     });
   }
 };
+
 
 module.exports = {
   register,
