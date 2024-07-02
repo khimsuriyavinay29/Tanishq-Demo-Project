@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../css/signin.css" />
+    <link rel="stylesheet" href="../css/getproduct.css"/>
   </head>
   <body>
     <div class="main">
@@ -32,14 +33,33 @@
             </label>
 
             <input type="file" id="myFile" name="filename" required />
-            <button>Upload</button>
+            <button type="submit">Upload</button>
           </form>
         </div>
       </div>
-    </div>
+    </div>  
+  </div>
+</div>
+
+<div class="all-product-container" id="all-product-container">
+  <div class="all-product-card" id="product-card">
+          <div class="all-product-card-img">
+              <img class="">
+              <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="all-product-card-content">
+              <div class="all-product-card-content-div">
+                  <p class="product-stoke-message" >only 1 left in stoke</p>
+                  <h3 class="product-heading" id="productTitle"> Product Name</h2>
+                  <p class="product-price" id="productPrice">₹</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
 
     <script src="../../reusableComponent/arrays/Categories.js"></script>
-    <script src="../js/productAdd.js"> </script>
+    <script src="../js/addProduct.js"> </script>
       
       
 

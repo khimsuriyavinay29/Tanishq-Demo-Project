@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #f2e9e9;
+}
+
+.update-form-container{
+    border-radius: 25px;
+}
+
+.form{
+    border-radius: 25px;
+    width: 400px;
+    background-color: #f2e9e9;
+}

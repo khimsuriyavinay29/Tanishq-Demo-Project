@@ -12,16 +12,16 @@ function registerUser(event) {
     };
     console.log(JSON.stringify(data));
 
-    fetch('http://localhost:4500/api/auth/register/', {
+    fetch('http://localhost:4500/api/auth/register', {
         method: 'POST',
         headers: {
-            'Accept': 'application/json',
             'Content-Type': 'application/json',
-        },
+            },
         body: JSON.stringify(data)
         
     })
     .then(response => {
+        console.log(response);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }

@@ -9,24 +9,26 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         password: document.getElementById('userPassword').value
     };
 
-    console.log('Sending login data:', loginData);
+    // console.log('Sending login data:', loginData);
+   
     fetch('http://localhost:4500/api/auth/login', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify(loginData)
     })
+    
     .then(response => response.json())
     .then(data => {
         
+        localStorage.setItem('accessToken', "");
         console.log('Response:', data);
         if (data.success) {
             alert("suceess");
-            localStorage.setItem('accessToken', data.data.accessToken);
-            window.location.href = './home.html';
+            // window.location.href = './home.html';
         } else {
-            alert("faild");
+            alert("fail");
         }
     })
     .catch(error => {

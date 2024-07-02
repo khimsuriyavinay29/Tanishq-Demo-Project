@@ -32,7 +32,6 @@ router.post("/", verifyTokenAndAdmin, upload.single('file'), async (req, res) =>
   const description = req.body.description
   const price = req.body.price
   const category = req.body.category
-  console.log("------",req.file,title,description,price,category);
   const image = req.file.filename
   console.log("image-----",image)
   const newProduct = new Product({
