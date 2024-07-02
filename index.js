@@ -18,10 +18,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const authRoute = require("./BackEnd/routes/authRoute");
 const userRoute = require("./BackEnd/routes/userRoute");
 const productRoute = require("./BackEnd/routes/productRoute");
+const categoryRoute = require('./BackEnd/routes/productCategoryRoutes');
 
 app.use("/api/auth", authRoute);
 app.use("/api/user", userRoute);
 app.use("/api/product", productRoute);
+app.use("/api/category", categoryRoute);
 
 mongoose
   .connect(process.env.MONGO_URL)
