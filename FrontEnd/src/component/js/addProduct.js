@@ -1,7 +1,5 @@
 
 
-
-
 const jewellerySelect = document.getElementById("jewellery");
 
 
@@ -35,7 +33,7 @@ categoryList.forEach(category => {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem("accessTokenAdmin")}`
         },
-        body: formData
+        body: JSON.stringify(formData)
       });
   
       if (!response.ok) {

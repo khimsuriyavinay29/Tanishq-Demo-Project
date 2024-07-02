@@ -14,16 +14,20 @@ body{
 
 .form-container{
     width: 600px;
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
+    overflow-y: auto;
     border-radius: 25px;
     justify-content: center;
     align-items: center;
     overflow: auto;
 }
 .form-container form{
+    /* height: inherit; */
     width: 400px;
+    margin: 25px 0;
     border-radius: 25px;
+
     background-color: #f2e9e9;
 
 }

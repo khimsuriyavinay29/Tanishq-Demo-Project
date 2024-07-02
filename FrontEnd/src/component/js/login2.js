@@ -35,7 +35,7 @@ document.getElementById("loginForm").addEventListener("submit",function(event){
                 console.log("----",accessToken)
                 if (isadmin) {
                     localStorage.setItem("accessTokenAdmin", accessToken);
-                    window.location.href = './form-product.html';
+                    window.location.href = './addProduct.html';
                 } else {
                     localStorage.setItem("accessTokenuser", accessToken);
                     window.location.href = './home.html';
