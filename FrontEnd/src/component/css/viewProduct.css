@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+.text-brown{
+    color: brown;
+}
+
 .vLine{
     width: 3px;
     height: 18px;

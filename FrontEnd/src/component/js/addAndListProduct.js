@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded",async function(event){
 
     .then(response => {return response.json()})
     .then(products =>{
-        console.log(products);
+        // console.log(products);
         renderProducts(products);
     })
     .catch(error => console.error('Error fetching products:', error));

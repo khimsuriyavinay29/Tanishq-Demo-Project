@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.fa-cart-shopping{
+    font-size: 175px;
+}
+.btn-marron{
+    color: rgba(128,0,0,1);
+}
+.btn-comman{
+    font-weight: 600;
+    font-size: 18px;
+}
+#btn-login{
+    background-color: rgba(128,0,0,1);
+    color: white;
+}
+.btn-comman:hover{
+    box-shadow: 4px 4px 10px rgba(128, 0, 0, 0.2),4px -4px 10px rgba(128, 0, 0, 0.2),-4px 4px 10px rgba(128, 0, 0, 0.2),-4px -4px 10px rgba(128, 0, 0, 0.2);
+}
