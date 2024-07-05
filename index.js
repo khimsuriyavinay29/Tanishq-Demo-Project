@@ -19,11 +19,14 @@ const authRoute = require("./BackEnd/routes/authRoute");
 const userRoute = require("./BackEnd/routes/userRoute");
 const productRoute = require("./BackEnd/routes/productRoute");
 const categoryRoute = require('./BackEnd/routes/productCategoryRoutes');
+const categoryTypeRoute = require('./BackEnd/routes/categoryTypeRoute');
+
 
 app.use("/api/auth", authRoute);
 app.use("/api/user", userRoute);
 app.use("/api/product", productRoute);
 app.use("/api/category", categoryRoute);
+app.use("/api/categoryType", categoryTypeRoute);
 
 mongoose
   .connect(process.env.MONGO_URL)

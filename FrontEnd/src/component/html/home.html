@@ -6,12 +6,15 @@
     <title>Home Page</title>
    
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
 
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/carousel.css"/>
     <link rel="stylesheet" href="./daily-wear.html" />
   </head>
   <body>
@@ -135,8 +138,24 @@
         </div>
       </header>
 
+
       <section>
-        <div class="all-text">
+        <div class="category-type-container w-100">
+          <div class="container bg-transparent mx-2">
+              <ul class="d-flex p-0 category-type m-0" id="category-type">
+  
+              </ul>
+          </div>
+      </div>
+
+      <!-- <section class="video-container container-fluid p-0 m-0">
+        <div class="position-relative w-100 h-100">
+          <video class="w-100" autoplay muted loop playsinline>
+            <source src="../videos/engagment.mp4" type="video/mp4">
+          </video>
+        </div>
+      </section> -->
+        <!-- <div class="all-text">
           <div class="text-cls">
             <ul>
               <li><a href="#">All Jewellery</a></li>
@@ -153,7 +172,7 @@
               <li><a href="#">MORE &#43;</a></li>
             </ul>
           </div>
-        </div>
+        </div> -->
       </section>
 
       <section>
@@ -165,20 +184,13 @@
       </section>
 
       <section>
-        <div class="img-scroll-1">
-          <div class="img-1">
-            <img src="../img/images/home-1.jpg" alt="" />
-            <img src="../img/images/a4.jpg" alt="" />
-            <img src="../img/images/w3.jpg" alt="" />
-            <img src="../img/images/g3.jpg" alt="" />
+        <div class="mycarousel">
+          <button class="mycarousel-button myprev" id="imgPrevBtn">&#10094;</button>
+          <div class="mycarousel-images">
           </div>
-        </div>
-        <img
-          alt="SBI Bank Offer"
-          class="img-2"
-          src="https://www.tanishq.co.in/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw218d558e/Bank%20Offer/sbi-titan-desktop-updated2.png"
-          title=""
-        />
+          <button class="mycarousel-button mynext" id="imgNextBtn">&#10095;</button>
+      </div>
+      <div class="mycarousel-dots" id="imageCarouselDots"></div>
       </section>
 
       <section>
@@ -198,137 +210,28 @@
       </section>
 
       <section>
-        <div class="main-sec-1">
-          <div class="sec-img-position" id="sec-img-position">
-            <!-- <div class="img-sec">
-              <div class="img-http">
-                <a href="./cart.html"
-                  ><img
-                    class="tile-image w-100 aspect-ratio-img"
-                    src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/images/hi-res/512621PHAAAA00_1.jpg"
-                    alt="Islamic Symbol Engraved Men's Laser Cut Pendant"
-                    title="Islamic Symbol Engraved Men's Laser Cut Pendant"
-                /></a>
+        <div class="w-100 d-flex justify-content-center">
+          <div class="carousel-product-card-container px-3 " id="carousel-product-card-container">
+              <button class="carousel-product-prev-btn" id="gold-carousel-product-prevBtn">&#10094;</button>
+              <div class="carousel-product-inner-card-container" id="carousel-product-inner-card-container">
+                  <div class="carousel-product-card-wrapper" id="gold-carousel-product-cardWrapper">
+                      <!-- <div class="card-div">
+                          <div class="img-div">
+                              <i class="fa-regular fa-heart"></i>
+                              <img class="img">
+                          </div>
+                          <div class="content">
+                              <p style="color: red;">only 1 is left</p>
+                              <h5>productname</h2>
+                                  <h2>Price</h2>  
+                              </div>
+                          </div>   -->
+                      </div>
+                      <button class="carousel-product-next-btn" id="gold-carousel-product-nextBtn">&#10095;</button>
+                  </div>
               </div>
-              <div class="pos-i">
-                <i class="fa-regular fa-heart fa-xl"></i>
-              </div>
-              <div class="img-pos">
-                <span>Only 1 left in stock</span>
-                <h5>Pretty Heart Necklace</h5>
-                <p>₹ 84289</p>
-              </div>
-            </div>
-
-            <div class="img-sec">
-              <div class="img-http">
-                <img
-                  class="tile-image w-100 aspect-ratio-img"
-                  src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/images/hi-res/502119FAZAA02_1.jpg"
-                  alt="Handsome 18 Karat Gold Criss-Cross Patterned Ring"
-                  title="Handsome 18 Karat Gold Criss-Cross Patterned Ring"
-                />
-              </div>
-              <div class="pos-i">
-                <i class="fa-regular fa-heart fa-xl"></i>
-              </div>
-              <div class="img-pos">
-                <h5>Lariat Gold Necklace</h5>
-                <p>₹70932</p>
-              </div>
-            </div>
-
-            <div class="img-sec">
-              <div class="img-http">
-                <img
-                  class="tile-image w-100 aspect-ratio-img"
-                  src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/images/hi-res/50E3I1FHHAA02_1.jpg"
-                  alt="Bold Minimal Diamond Ring for Men"
-                  title="Bold Minimal Diamond Ring for Men"
-                />
-              </div>
-              <div class="pos-i">
-                <i class="fa-regular fa-heart fa-xl"></i>
-              </div>
-              <div class="img-pos">
-                <h5>Pretty Heart Necklace</h5>
-                <p>₹45999</p>
-              </div>
-            </div>
-
-            <div class="img-sec">
-              <div class="img-http">
-                <img
-                  class="tile-image w-100 aspect-ratio-img"
-                  src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/images/hi-res/503416FDWAA02_1.jpg"
-                  alt="Gentleman's Enchantment Diamond Finger Ring for Men"
-                  title="Gentleman's Enchantment Diamond Finger Ring for Men"
-                />
-              </div>
-              <div class="pos-i">
-                <i class="fa-regular fa-heart fa-xl"></i>
-              </div>
-              <div class="img-pos">
-                <h5>Pretty Heart Necklace</h5>
-                <p>₹ 752529</p>
-              </div>
-            </div>
-
-            <div class="img-sec">
-              <div class="img-http">
-                <img
-                  class="tile-image w-100 aspect-ratio-img"
-                  src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/images/hi-res/51F2BDBKBAA00_1.jpg"
-                  alt="Sleek Om Bracelet"
-                  title="Sleek Om Bracelet"
-                />
-              </div>
-              <div class="pos-i">
-                <i class="fa-regular fa-heart fa-xl"></i>
-              </div>
-              <div class="img-pos">
-                <h5>Pretty Heart Necklace</h5>
-                <p>₹ 752529</p>
-              </div>
-            </div>
-
-            <div class="img-sec">
-              <div class="img-http">
-                <img
-                  class="tile-image w-100 aspect-ratio-img"
-                  src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/images/hi-res/51F1D1BQWAA00_1.jpg"
-                  alt="Charming Link Gold Bracelet For Men"
-                  title="Charming Link Gold Bracelet For Men"
-                />
-              </div>
-              <div class="pos-i">
-                <i class="fa-regular fa-heart fa-xl"></i>
-              </div>
-              <div class="img-pos">
-                <h5>Pretty Heart Necklace</h5>
-                <p>₹ 752529</p>
-              </div>
-            </div> -->
-
-            <!-- <div class="img-sec">
-              <div class="img-http">
-                <img
-                  class="tile-image w-100 aspect-ratio-img"
-                  src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/images/hi-res/51F1D1VRU1A00_1.jpg"
-                  alt="Lined Alluring Gold Kada for Men"
-                  title="Lined Alluring Gold Kada for Men"
-                />
-              </div>
-              <div class="pos-i">
-                <i class="fa-regular fa-heart fa-xl"></i>
-              </div>
-              <div class="img-pos">
-                <h5>Pretty Heart Necklace</h5>
-                <p>₹ 752529</p>
-              </div>
-            </div> -->
           </div>
-        </div>
+        <div class="carousel-product-card-container-dot " id="gold-carousel-product-carouselDots"></div>
       </section>
 
       <section>
@@ -342,162 +245,24 @@
               alt="divider-image"
             />
           </div>
-          <div class="wrt-sec-img">
-            <div class="wrt-sec-img-1">
-              <img
-                src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw114df9d7/homepage/shopByCategory/fod-mangalsutra.jpg"
-                class="card-img-top"
-                alt="..."
-                loading="lazy"
-              />
-              <div class="mangal">
-                <span>Mangalsutra</span>
-                <p>Explore &gt;</p>
+          <!-- --start-- -->
+            <div class="container-fluid d-flex justify-content-center w-100">
+              <div class="row category-type-Card-wrapper g-2" id="category-type-Card-wrapper">
+                  <div class="category-type-Card col-4 col-lg-2">
+                      <div class="w-100 rounded-1 border border-2">
+                          <div class="w-100 mb-1 rounded-1">
+                              <img class="w-100 rounded-1 " src="../../../../BackEnd/public/images/1719405691273-shree yantra.webp">
+                          </div>
+                          <div class="p-3 category-type-Card-heading">
+                              <h6 class="h6 px-1 text-center text-tanishq-color">Manglsutras</h6>
+                              <div class="px-1 mb-2 category-type-Card-explore">
+                                  <p class="m-0 text-center ">Explore</p>
+                                  <p class="m-0 text-center ">&#10095;</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
               </div>
-            </div>
-
-            <div class="wrt-sec-img-1">
-              <img
-                src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dwebf0313b/homepage/shopByCategory/fod-gold-coins.jpg"
-                class="card-img-top"
-                alt="..."
-                loading="lazy"
-              />
-              <div class="mangal">
-                <span>Gold Coins</span>
-
-                <p>Explore &gt;</p>
-              </div>
-            </div>
-            <div class="wrt-sec-img-1">
-              <img
-                src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw47b1df4b/homepage/shopByCategory/fod-earrings.jpg"
-                class="card-img-top"
-                alt="..."
-                loading="lazy"
-              />
-              <div class="mangal">
-                <span>Earrings</span>
-                <p>Explore &gt;</p>
-              </div>
-            </div>
-
-            <div class="wrt-sec-img-1">
-              <img
-                src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw47b1df4b/homepage/shopByCategory/fod-earrings.jpg"
-                class="card-img-top"
-                alt="..."
-                loading="lazy"
-              />
-              <div class="mangal">
-                <span>Chain</span>
-                <p>Explore &gt;</p>
-              </div>
-            </div>
-
-            <div class="wrt-sec-img-1">
-              <img
-                src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw4dcf3d1d/homepage/shopByCategory/fod-bracelet.jpg"
-                class="card-img-top"
-                alt="..."
-                loading="lazy"
-              />
-              <div class="mangal">
-                <span>Bracelet</span>
-                <p>Explore &gt;</p>
-              </div>
-            </div>
-
-            <div class="wrt-sec-img-1">
-              <img
-                src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dwfc4fb974/homepage/shopByCategory/fod-rings.jpg"
-                class="card-img-top"
-                alt="..."
-                loading="lazy"
-              />
-              <div class="mangal">
-                <span>Finger Rings</span>
-                <p>Explore &gt;</p>
-              </div>
-            </div>
-
-            <div class="wrt-sec-img-1">
-              <img
-                src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw3617b276/homepage/shopByCategory/fod-pendants.jpg"
-                class="card-img-top"
-                alt="..."
-                loading="lazy"
-              />
-              <div class="mangal">
-                <span>Pendants</span>
-                <p>Explore &gt;</p>
-              </div>
-            </div>
-
-            <div class="wrt-sec-img-1">
-              <img
-                src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw3617b276/homepage/shopByCategory/fod-pendants.jpg"
-                class="card-img-top"
-                alt="..."
-                loading="lazy"
-              />
-              <div class="mangal">
-                <span>Noise Pins</span>
-                <p>Explore &gt;</p>
-              </div>
-            </div>
-
-            <div class="wrt-sec-img-1">
-              <img
-                src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dwb8086cf2/homepage/shopByCategory/fod-necklace.jpg"
-                class="card-img-top"
-                alt="..."
-                loading="lazy"
-              />
-              <div class="mangal">
-                <span>Neck Wear</span>
-                <p>Explore &gt;</p>
-              </div>
-            </div>
-
-            <div class="wrt-sec-img-1">
-              <img
-                src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw66347a7d/homepage/shopByCategory/fod-necklace-set.jpg"
-                class="card-img-top"
-                alt="..."
-                loading="lazy"
-              />
-              <div class="mangal">
-                <span>Necklace Set</span>
-                <p>Explore &gt;</p>
-              </div>
-            </div>
-
-            <div class="wrt-sec-img-1">
-              <img
-                src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw407b5f83/homepage/shopByCategory/fod-pendant-set.jpg"
-                class="card-img-top"
-                alt="..."
-                loading="lazy"
-              />
-              <div class="mangal">
-                <span>Pendant Set</span>
-                <p>Explore &gt;</p>
-              </div>
-            </div>
-
-            <div class="wrt-sec-img-1">
-              <img
-                src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw407b5f83/homepage/shopByCategory/fod-pendant-set.jpg"
-                class="card-img-top"
-                alt="..."
-                loading="lazy"
-              />
-              <div class="mangal">
-                <span>Neck Wear</span>
-                <p>Explore &gt;</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -585,8 +350,33 @@
         </div>
       </section>
 
-      <section style="padding: 10px">
-        <div class="main-sec-2">
+      <section>
+        <div class="w-100 d-flex justify-content-center">
+          <div class="carousel-product-card-container px-3 " id="carousel-product-card-container">
+              <button class="carousel-product-prev-btn" id="diamond-carousel-product-prevBtn">&#10094;</button>
+              <div class="carousel-product-inner-card-container" id="diamond-carousel-product-inner-card-container">
+                  <div class="carousel-product-card-wrapper" id="diamond-carousel-product-cardWrapper">
+                      <!-- <div class="card-div">
+                          <div class="img-div">
+                              <i class="fa-regular fa-heart"></i>
+                              <img class="img">
+                          </div>
+                          <div class="content">
+                              <p style="color: red;">only 1 is left</p>
+                              <h5>productname</h2>
+                                  <h2>Price</h2>  
+                              </div>
+                          </div>   -->
+                      </div>
+                      <button class="carousel-product-next-btn" id="diamond-carousel-product-nextBtn">&#10095;</button>
+                  </div>
+              </div>
+          </div>
+        <div class="carousel-product-card-container-dot " id="diamond-carousel-product-carouselDots"></div>
+      </section>
+
+      <!-- <section style="padding: 10px"> -->
+        <!-- <div class="main-sec-2">
           <div class="img-sec-1">
             <div class="div-img-sec">
               <div class="img-https">
@@ -672,8 +462,8 @@
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </div> -->
+      <!-- </section> -->
 
       <section>
         <div class="img-fsize">
@@ -1360,5 +1150,9 @@
       });
     </script>
    <script src="../js/Home.js"></script>
+   <script src="../js/Carousel.js"></script>
+   <script src="../js/nav.js"></script>
+   <script src="../js/DiamondCarousel.js"></script>
+   <script src="../js/GoldCarousel.js"></script>
 </body>
 </html>

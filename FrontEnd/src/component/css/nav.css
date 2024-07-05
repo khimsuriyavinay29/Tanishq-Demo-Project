@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.category-type-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.category-type{
+    list-style: none;
+    justify-content: space-between;   
+}
+
+.li{
+    /* margin: 0 12px; */
+    font-size: 15px;
+}
+
+@media (max-width: 992px){
+    .category-type-container{
+        display: none ;
+    }
+}

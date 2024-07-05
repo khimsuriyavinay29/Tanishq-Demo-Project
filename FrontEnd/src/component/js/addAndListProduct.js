@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded",async function(event){
 
     .then(response => {return response.json()})
     .then(products =>{
-        console.log(products);
+        // console.log(products);
         renderProducts(products);
     })
     .catch(error => console.error('Error fetching products:', error));
@@ -48,7 +48,7 @@ function createProductHTML(product) {
 
 function renderProducts(products) {
     const container = document.getElementById('all-product-container');
-    container.innerHTML = products.map(createProductHTML).join('');
+    container.innerHTML = products.map(createProductHTML);
 
     const productCards = document.querySelectorAll(".all-product-card");
     productCards.forEach(card =>{ 
