@@ -48,7 +48,7 @@ function createProductHTML(product) {
 
 function renderProducts(products) {
     const container = document.getElementById('all-product-container');
-    container.innerHTML = products.map(createProductHTML).join('');
+    container.innerHTML = products.map(createProductHTML);
 
     const productCards = document.querySelectorAll(".all-product-card");
     productCards.forEach(card =>{ 

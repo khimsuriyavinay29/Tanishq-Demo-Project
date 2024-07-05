@@ -9,7 +9,7 @@ const imagesArray = [
   
       
     const carouselImages = document.querySelector('.mycarousel-images');
-    const carouselDots = document.getElementById('carouselDots');
+    const carouselDots = document.getElementById('imageCarouselDots');
 
             imagesArray.forEach((Image, index) =>{
                 const img = document.createElement('img');
@@ -27,8 +27,8 @@ const imagesArray = [
 
 // const images = document.querySelectorAll('.carousel-item');
 
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
+const prevBtn = document.getElementById('imgPrevBtn');
+const nextBtn = document.getElementById('imgNextBtn');
 
 //     console.log(carouselImages.scrollWidth);
 
@@ -41,7 +41,7 @@ function showImage(index) {
     currentIndex = imagesArray.length - 1;
   } else {
     currentIndex = index;
-    console.log(currentIndex);
+    // console.log(currentIndex);
   }
   carouselImages.style.transform = `translateX(-${currentIndex * 100}%)`;
   updateDots();
@@ -64,6 +64,6 @@ nextBtn.addEventListener('click', () => {
 
 setInterval(() => {
   showImage(currentIndex + 1);
-}, 3000);
+}, 5000);
 
 updateDots();
