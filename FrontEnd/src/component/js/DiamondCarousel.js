@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", async (event) =>{
         }
         const jsonData = await response.json();
 
-        console.log(jsonData)
+        // console.log(jsonData)
 
         let currentIndex = 0;
 
@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", async (event) =>{
            
             const imgDiv = document.createElement("div");
             imgDiv.className = "carousel-product-img-div";
+            
             const heartIcon = document.createElement("i");
             heartIcon.className = "fa-regular fa-heart";
             
@@ -39,11 +40,13 @@ document.addEventListener("DOMContentLoaded", async (event) =>{
             img.className = "carousel-product-img"
             img.src = product.image; 
             img.alt = product.productName; 
+            
             imgDiv.appendChild(heartIcon);
             imgDiv.appendChild(img);
 
             const contentDiv = document.createElement("div");
             contentDiv.className = "carousel-product-content";
+           
             const stockText = document.createElement("p");
             stockText.style.color = "red";
             stockText.textContent = `Only 1 is left`; 
@@ -51,8 +54,9 @@ document.addEventListener("DOMContentLoaded", async (event) =>{
             const productName = document.createElement("h6");
             productName.textContent = product.title; 
             productName.className = "text-nowrap text-truncate"
+            
             const price = document.createElement("h5");
-            price.textContent = `${product.price} `; 
+            price.innerHTML = `&#8377; ${product.price} `; 
             contentDiv.appendChild(stockText);
             contentDiv.appendChild(productName);
             contentDiv.appendChild(price);
@@ -61,6 +65,7 @@ document.addEventListener("DOMContentLoaded", async (event) =>{
             cardDiv.appendChild(contentDiv);
 
             diamondCardWrapper.appendChild(cardDiv);
+            
             if (index < 4) {
             const dot = document.createElement("span");
             dot.className = 'carousel-product-dot';
@@ -76,11 +81,15 @@ document.addEventListener("DOMContentLoaded", async (event) =>{
             // const cardWidth = document.querySelector('.card-div').offsetWidth;
             const cardWidth = document.querySelector('.carousel-product-card-div').offsetWidth + 2 * parseFloat(getComputedStyle(document.querySelector('.carousel-product-card-div')).marginRight);
             
-            console.log(cardWidth);
+            // console.log(document.querySelector('.carousel-product-card-div').offsetWidth, cardWidth,parseFloat(getComputedStyle(document.querySelector('.carousel-product-card-div')).marginRight))
+
             const offset = -currentIndex * cardWidth;
             diamondCardWrapper.style.transform = `translateX(${offset}px)`;
 
+            
+
             document.querySelectorAll('.carousel-product-dot').forEach((dot, index) => {
+                // dot.classList.toggle('active', index === currentIndex);
                 if (index === currentIndex) {
                     dot.classList.add('active');
                 } else {

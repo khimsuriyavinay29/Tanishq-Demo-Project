@@ -3,46 +3,87 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 .text-tanishq-color{
-    color: rgb(164, 8, 8);
-}
-.background-tanishq-color{
-    background-color: rgb(164, 8, 8);
+    color:  rgb(132,44,48)
+  }
+  .background-tanishq-color{
+    background-color: 
+    rgb(132,44,48)
+  }
+
+  .tanishq-official-background-color{
+    background-color: #f2e9e9;
+  }
+
+.navigation{
+    position: sticky;
+    top: 0;
 }
 
-.category-type-Card{
-    height: auto;
-    display: flex;
+.symbol, .nav-option {
+    
+    text-align: center;
+}
+.searchbar {
+    width: 100%;
+}
+.menu-icon {
+    display: none;
+}
+.fa-user-div{
+    display: block;
+}
+.nav-option-name{
+    font-size: 80%;
+    display: block;
 }
 
-.category-type-Card:hover{
-   cursor: pointer;
+.nav-option-div{
+    padding: 25px 0;
+    height: 100%;
 }
-.category-type-Card-heading:hover{
-    box-shadow: 2px 2px 5px rgb(239, 235, 235), -2px 2px 5px rgb(239, 235, 235);
+.nav-account-option{
+    display: none;
+    width: 70%;
+    top: 100%;
+    right: 0%;
+    position: absolute;
 }
-
-.category-type-Card-wrapper{
-    width: 80%;
-}
-.category-type-Card-explore{
-    display: flex;
-    justify-content: center;
+.nav-account-option-div:hover .nav-account-option, .nav-account-option-div{
+    display: block;
     cursor: pointer;
-    transition: all 1s;
 }
-.category-type-Card-explore p{
-    transition: all 1s;
-}
-.category-type-Card-explore:hover p:first-child {
-    transform: translateX(-50px); /* Separate elements on hover */
-}
-.category-type-Card-explore:hover p:last-child {
-    transform: translateX(50px); /* Separate elements on hover */
+.nav-account-option-div::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+    width: 0;
+    height: 3px;
+    background-color: #832729; 
+    border-radius: 5px;
+    transition: all 0.5s ease;
+   }
+  .nav-account-option-div:hover::before{
+    width: 20%;
+  }
+@media (max-width: 992px) {
+    .row:first-child .searchbar-col {
+        order: 2;
+    }
+    .menu-icon {
+        display: inline-block;
+        margin-right: 10px;
+    }
+    .nav-option-name{
+        display: none;
+    }
 }
 
-@media (max-width: 992px){
-    .category-type-Card-wrapper{
-        width: 100%;
+@media (max-width: 667px) {
+    .fa-user-div{
+        display: none;
     }
 }

@@ -1,6 +1,10 @@
 document.addEventListener("DOMContentLoaded", async (event) =>{
     event.preventDefault();
 
+    let currentIndex = 0;
+    let screenWidth = window.innerWidth;
+
+
     
     const categoryData = await fetch("http://localhost:4500/api/category")
 
@@ -41,111 +45,113 @@ document.addEventListener("DOMContentLoaded", async (event) =>{
         
     }   
 
+
+    function updateScreenWidth() {
+        screenWidth = window.innerWidth;
+        // console.log("Updated screen width:", screenWidth);
+        if(screenWidth >=991){
+            currentIndex =0;
+            updateCategoryTypeCarousel();
+        }
+    }
+    
+    window.addEventListener('resize', updateScreenWidth);
+    
+    
+    
     try{
         const categoryTypeData = await fetch("http://localhost:4500/api/categoryType")
-    
+        
         const categoryTypeDatajson = await categoryTypeData.json();
-        console.log(categoryTypeDatajson);
+        
+        const sliceData1 = categoryTypeDatajson.slice(0,6);
+        const sliceData2 = categoryTypeDatajson.slice(6,12);
+        
+        
+        addNavigationDots();
+        renderCategoryTypeData(sliceData1,sliceData2)
+        
+        updateCategoryTypeCarousel();
+        updateScreenWidth();
 
-        renderCategoryTypeData(categoryTypeDatajson)
+}
+catch(error){
+    console.log("Tou have encounter an error",error);
+}
 
-    }
-    catch(error){
-        console.log("Tou have encounter an error",error);
-    }
-
-    function createCategoryTypeHTML(data){
-        return `
-                <div class="category-type-Card col-4 col-lg-2" data-id="${data._id}">
-                    <div class="w-100 rounded-1 border border-2">
-                        <div class="w-100  rounded-1">
-                            <img class="w-100 rounded-1 " src="${data.image}">
-                        </div>
-                        <div class="p-3 category-type-Card-heading">
-                            <h6 class="h6 px-1 text-center text-tanishq-color">${data.name}</h6>
-                            <div class="px-1 mb-2 category-type-Card-explore">
-                                <p class="m-0">Explore</p>
-                                <p class="m-0">&#10095;</p>
-                            </div>
+function createCategoryTypeHTML(data){
+    return `
+            <div class="category-type-Card col-4 col-lg-2" data-id="${data._id}">
+                <div class="w-100 rounded-1 d-flex flex-column justify-content-between border border-2">
+                    <div class="w-100  rounded-1">
+                        <img class="w-100 rounded-1 " src="${data.image}">
+                    </div>
+                    <div class="p-2 category-type-Card-heading">
+                        <h6 class="h6 text-center text-tanishq-color mt-2 mb-1">${data.name}</h6>
+                        <div class="row mb-1 category-type-Card-explore">
+                            <p class="col-7 p-1 text-end">Explore</p>
+                            <p class="col-5 my-1 ps-1 ">&#10095;</p>
                         </div>
                     </div>
                 </div>
-        `
-    }
+            </div>
+    `
+}
 
-    function renderCategoryTypeData(data){
 
-        const container = document.getElementById("category-type-Card-wrapper");
+function renderCategoryTypeData(data1,data2){
 
-        container.innerHTML = data.map(createCategoryTypeHTML).join("");
+    const container1 = document.getElementById("category-type-Card-wrapper1");
+    const container2 = document.getElementById("category-type-Card-wrapper2");
 
-        const categoryContainerCard = document.querySelectorAll(".category-type-Card");
-        console.log(categoryContainerCard);
+    container1.innerHTML = data1.map(createCategoryTypeHTML).join("");
+    container2.innerHTML = data2.map(createCategoryTypeHTML).join("");
 
-        categoryContainerCard.forEach(card =>{
-            card.addEventListener("click",(event) =>{
-                event.preventDefault();
+    const categoryContainerCard = document.querySelectorAll(".category-type-Card");
+    // console.log(categoryContainerCard);
 
-                window.location.href = "../html/home.html"
-            })         
-        })
-    }
+    categoryContainerCard.forEach(card =>{
+        card.addEventListener("click",(event) =>{
+            event.preventDefault();
 
+            window.location.href = "../html/home.html"
+        })         
+    })
+}
+
+function updateCategoryTypeCarousel() {
+    const container1 = document.getElementById("category-type-Card-wrapper1");
+    const container2 = document.getElementById("category-type-Card-wrapper2");
+    const cardWidth = 3 * document.querySelector('.category-type-Card').offsetWidth + parseFloat(getComputedStyle(document.querySelector('.category-type-Card')).marginRight) * 2 + 5 ;
     
-    
-    // const productData = await fetch("http://localhost:4500/api/product")
+    // console.log(parseFloat(getComputedStyle(document.querySelector('.category-type-Card')).marginRight) * 2,document.querySelector('.category-type-Card').offsetWidth)
 
-    // const jsonProductData = await productData.json();
-    // // console.log(jsonProductData);
+    const offset1 = -currentIndex * cardWidth;
+    // console.log(offset1);
+    const offset2 = -currentIndex * cardWidth;
 
-    // renderProducts(jsonProductData)
+    container1.style.transform = `translateX(${offset1}px)`;
+    container2.style.transform = `translateX(${offset2}px)`;
 
-    // function createProductHTML(product){
-    //     return `
-    //         <div class="img-sec" data-id="${product._id}">
-    //           <div class="img-http">
-    //             <img
-    //                 class="tile-image w-100 aspect-ratio-img"
-    //                 src="${product.image}"
-    //                 alt="${product.title}"
-    //                 title="${product.title}"
-    //             />
-    //           </div>
-    //           <div class="pos-i">
-    //             <i class="fa-regular fa-heart fa-xl"></i>
-    //           </div>
-    //           <div class="img-pos">
-    //             <span>Only 1 left in stock</span>
-    //             <h5>${product.title}</h5>
-    //             <p>₹ ${product.price}</p>
-    //           </div>
-    //         </div>
+    document.querySelectorAll('.dot').forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+    });
+}
 
-    //     `
-    // }
-    
-    // function renderProducts(products){
-    //     const container = document.getElementById("sec-img-position")
+function addNavigationDots() {
+    const dotsContainer = document.getElementById("navigation-dots");
+    dotsContainer.innerHTML = `
+        <span class="dot" data-target="0"></span>
+        <span class="dot" data-target="1"></span>
+    `;
 
-    //     container.innerHTML = products.map(createProductHTML).join('');
-
-    //     const productCards = document.querySelectorAll(".img-sec");
-        
-    //     productCards.forEach(card =>{ 
-    //     card.addEventListener('click', (event) =>{
-    //         event.preventDefault();
-
-    //         const viewProductId = card.getAttribute('data-id');
-    //         console.log(viewProductId);
-    //         localStorage.setItem("viewProductId", viewProductId);
-    //         window.location.href ="../html/ViewProduct.html";
-    //     })
-    // })
-    // }
-
-    //category container strat
-    
-    
-    //category container end
+    document.querySelectorAll('.dot').forEach(dot => {
+        dot.addEventListener('click', (event) => {
+            currentIndex = parseInt(event.target.dataset.target, 10);
+            updateCategoryTypeCarousel();
+        });
+    });
+}
+   
 })
 

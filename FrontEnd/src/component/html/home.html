@@ -20,159 +20,74 @@
   <body>
     <div class="logic">
 
-      <header>
-        <div class="main-header">
-          <div class="logo">
-            <div class="logo-1">
-              <div class="menu-icon">
-                <i class="fa-solid fa-bars fa-xl"></i>
-              </div>
-
-              <img
-                src="../img/images/tanishq.png"
-                alt="image"
-                class="logo-img d-none display-lg"
-              />
-
-              <div class="nav-link-2">
-                <div class="li-i">
-                  <a href="./daily-wear.html">
-                    <i class="fa-solid fa-gem fa-xl"></i>
-                    <p>Daily Wear</p>
-                  </a>
+      <section class="w-100 px-2 navigation tanishq-official-background-color">
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-between align-items-center">
+                <div class="col-lg-2 col-4 d-flex pe-4 justify-content-start justify-content-lg-end  align-items-center symbol">
+                    <span class="menu-icon text-tanishq-color fs-1">&#9776;</span>
+                    <img src="../img/tanishq_logo_full_screen.svg" style="width: 75px;height: 75px;">
                 </div>
-                <div class="li-i">
-                  <a href="#">
-                    <i class="fa-solid fa-store fa-xl"></i>
-                    <p>Stores</p>
-                  </a>
-                </div>
-                <div class="li-i" id="accountBtn">
-                  <a href="">
-                    <i class="fa-solid fa-file-invoice fa-xl"></i>
-                    <p>Account</p>
-                  </a>
-                  <div class="mk-hide">
-                    <div class="main">
-                      <div class="login-para">
-                        <h1>MY ACCOUNT</h1>
-                        <p>Login To Access Your Account</p>
-                      </div>
-                      <div class="button">
-                        <button class="fs-2" onclick="window.location.href='./login.html'">Login</button>
-                        <button class="fs-2" onclick="window.location.href='../html/signin.html'">Sign up</button>
-                      </div>
-                      
-                      
+                <div class=" col-lg-5 col-xl-6 col-12 py-lg-1 rounded-2 bg-white searchbar-col px-3">
+                    <div class="row bg-white rounded-2">
+                        <div class="col-lg-8 col-md-9 col-9  d-flex align-items-center">
+                            <i class="fa-solid searchbar-search fa-magnifying-glass  mx-1 fs-4 text-tanishq-color"></i>
+                            <input type="text" class="form-control border-0 searchbar" placeholder="Search...">
+                        </div>
+                        <div class="col-lg-4 col-md-3 col-3  d-flex ps-5 pe-0 align-items-center justify-content-center">
+                            <i class="fa-solid navigation-icons px-2 fs-4 fa-camera text-tanishq-color"></i>
+                            <i class="fa-solid navigation-icons px-2 fs-4 fa-microphone text-tanishq-color"></i>
+                            <i class="fa-solid navigation-icons px-2 fs-4 fa-magnifying-glass text-tanishq-color"></i>
+                        </div>
                     </div>
-                  </div>
                 </div>
-                <div class="li-i" id="wishlistBtn">
-                  <a href="">
-                    <i class="fa-regular fa-heart fa-xl"></i>
-                    <p>Wishlist</p>
-                  </a>
+                <div class="col-lg-5 col-xl-4 col-5 text-tanishq-color pe-5 ps-2 position-relative  nav-option d-flex justify-content-lg-start justify-content-end align-items-center">
+                    <div class="nav-option-div">
+                        <img src="../img/dailywear.svg" style="width: 50%; height: 30%;">
+                        <p class="nav-option-name m-0">DAILYWEARS</p>
+                    </div>
+                    <div class="nav-option-div">
+                        <i class="fa-solid nav-icon fa-shop"></i>
+                        <p class="nav-option-name m-0">STORE</p>
+                    </div>
+                    <div class="nav-option-div nav-account-option-div fa-user-div">
+                        <i class="fa-regular nav-icon fa-user"></i>
+                        <p class="nav-option-name m-0">ACCOUNT</p>
+                        <div class="nav-account-option rounded-2 border container-fluid text-center p-3 bg-white text-tanishq-color">
+                            <div>
+                             <h1 class=" mb-3" >My Account</h1>
+                             <p class="fs-6">LOGIN TO ACCESS YOUR ACCOUNT</p>
+                             <div class="d-flex justify-content-evenly my-2 align-items-center">
+                                 <button class="btn border py-1 px-3">Log In</button>
+                                 <button class="btn border py-1 px-3 text-white background-tanishq-color">Sign Up</button>
+                             </div>
+                             <p class="fs-6">CLICK HERE TO CONTACT US</p>
+                            </div> 
+                         </div>
+                    </div>
+                    <div class="nav-option-div">
+                      <i class="fa-solid nav-icon fa-heart-pulse"></i>
+                        <p class="nav-option-name m-0">WISHLIST</p>
+                    </div>
+                    <div class="nav-option-div position-relative">
+                        <span class="cart-span position-absolute background-tanishq-color">0</span>
+                        <i class="fa-solid nav-icon fa-cart-shopping "></i>
+                        <p class="nav-option-name m-0">CART</p>
+                    </div>
                 </div>
-                <div class="li-i" id="cart">
-                  <a href="">
-                    <i class="fa-solid fa-cart-shopping fa-xl"></i>
-                    <i class="fa-light fa-circle-0" id="add"></i>
-                    <p>Cart</p>
-                  </a>
-                </div>
-              </div>
             </div>
-
-            <div class="search-bar">
-              <input
-                type="text"
-                id="inlog"
-                placeholder="Search for Gold Jewellery, Diamond jewellery and more"
-              />
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-          </div>
-
-          <div class="nav-link" id="navLinks">
-            <div class="nav-link-1">
-              <div class="new-link">
-                <ul>
-                  <li>
-                    <a><i class="fa-solid fa-arrow-right"></i> New Jewellery</a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="fa-solid fa-arrow-right"></i> Gold</a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      ><i class="fa-solid fa-arrow-right"></i> Diamond</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#"
-                      ><i class="fa-solid fa-arrow-right"></i> Earrings</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#"
-                      ><i class="fa-solid fa-arrow-right"></i> Best Sellers</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#"><i class="fa-solid fa-arrow-right"></i> Mia</a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      ><i class="fa-solid fa-arrow-right"></i> Collection</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#"
-                      ><i class="fa-solid fa-arrow-right"></i> Wedding</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
         </div>
-      </header>
 
+      </section>
 
       <section>
-        <div class="category-type-container w-100">
+        <div class="category-type-container-nav bg-white w-100">
           <div class="container bg-transparent mx-2">
-              <ul class="d-flex p-0 category-type m-0" id="category-type">
+              <ul class="d-flex p-0 category-type-nav m-0" id="category-type">
   
               </ul>
           </div>
       </div>
 
-      <!-- <section class="video-container container-fluid p-0 m-0">
-        <div class="position-relative w-100 h-100">
-          <video class="w-100" autoplay muted loop playsinline>
-            <source src="../videos/engagment.mp4" type="video/mp4">
-          </video>
-        </div>
-      </section> -->
-        <!-- <div class="all-text">
-          <div class="text-cls">
-            <ul>
-              <li><a href="#">All Jewellery</a></li>
-              <li><a href="#">GOLD</a></li>
-              <li><a href="#"> DIAMOND</a></li>
-              <li><a href="#">EARRING</a></li>
-              <li><a href="#">RING</a></li>
-              <li><a href="#">BESTSELLER </a></li>
-              <li><a href="#">MIA</a></li>
-              <li><a href="#">COLLECTION</a></li>
-              <li><a href="#">WEDDING</a></li>
-              <li><a href="#">GIFTING</a></li>
-              <li><a href="#">GOLDEN HARVEST</a></li>
-              <li><a href="#">MORE &#43;</a></li>
-            </ul>
-          </div>
-        </div> -->
       </section>
 
       <section>
@@ -214,7 +129,7 @@
           <div class="carousel-product-card-container px-3 " id="carousel-product-card-container">
               <button class="carousel-product-prev-btn" id="gold-carousel-product-prevBtn">&#10094;</button>
               <div class="carousel-product-inner-card-container" id="carousel-product-inner-card-container">
-                  <div class="carousel-product-card-wrapper" id="gold-carousel-product-cardWrapper">
+                <div class="carousel-product-card-wrapper" id="gold-carousel-product-cardWrapper">
                       <!-- <div class="card-div">
                           <div class="img-div">
                               <i class="fa-regular fa-heart"></i>
@@ -226,9 +141,9 @@
                                   <h2>Price</h2>  
                               </div>
                           </div>   -->
-                      </div>
-                      <button class="carousel-product-next-btn" id="gold-carousel-product-nextBtn">&#10095;</button>
-                  </div>
+                </div>
+              </div>
+              <button class="carousel-product-next-btn" id="gold-carousel-product-nextBtn">&#10095;</button>
               </div>
           </div>
         <div class="carousel-product-card-container-dot " id="gold-carousel-product-carouselDots"></div>
@@ -246,25 +161,30 @@
             />
           </div>
           <!-- --start-- -->
-            <div class="container-fluid d-flex justify-content-center w-100">
-              <div class="row category-type-Card-wrapper g-2" id="category-type-Card-wrapper">
-                  <div class="category-type-Card col-4 col-lg-2">
-                      <div class="w-100 rounded-1 border border-2">
-                          <div class="w-100 mb-1 rounded-1">
-                              <img class="w-100 rounded-1 " src="../../../../BackEnd/public/images/1719405691273-shree yantra.webp">
-                          </div>
-                          <div class="p-3 category-type-Card-heading">
-                              <h6 class="h6 px-1 text-center text-tanishq-color">Manglsutras</h6>
-                              <div class="px-1 mb-2 category-type-Card-explore">
-                                  <p class="m-0 text-center ">Explore</p>
-                                  <p class="m-0 text-center ">&#10095;</p>
-                              </div>
-                          </div>
+          <div class="container-fluid category-type-container d-flex flex-column  align-items-center w-100">
+            <div class="row mb-2 flex-nowrap category-type-Card-wrapper g-lg-2 g-4" id="category-type-Card-wrapper1"></div>
+            <div class="row category-type-Card-wrapper flex-nowrap g-4 g-lg-2" id="category-type-Card-wrapper2"></div>
+            <div class="dot-container">
+                <div class="d-flex justify-content-center mt-3" id="navigation-dots">
+                    
+                </div>
+            </div>
+        </div>
+          </div>
+          <!-- <div class="category-type-Card col-4 col-lg-2">
+              <div class="w-100 rounded-1 border border-2">
+                  <div class="w-100 mb-1 rounded-1">
+                      <img class="w-100 rounded-1 " src="../../../../BackEnd/public/images/1719405691273-shree yantra.webp">
+                  </div>
+                  <div class="p-3 category-type-Card-heading">
+                      <h6 class="h6 px-1 text-center text-tanishq-color">Manglsutras</h6>
+                      <div class="px-1 mb-2 category-type-Card-explore">
+                          <p class="m-0 text-center ">Explore</p>
+                          <p class="m-0 text-center ">&#10095;</p>
                       </div>
                   </div>
               </div>
-          </div>
-        </div>
+          </div> -->
       </section>
 
       <section>
@@ -353,118 +273,29 @@
       <section>
         <div class="w-100 d-flex justify-content-center">
           <div class="carousel-product-card-container px-3 " id="carousel-product-card-container">
-              <button class="carousel-product-prev-btn" id="diamond-carousel-product-prevBtn">&#10094;</button>
-              <div class="carousel-product-inner-card-container" id="diamond-carousel-product-inner-card-container">
-                  <div class="carousel-product-card-wrapper" id="diamond-carousel-product-cardWrapper">
-                      <!-- <div class="card-div">
-                          <div class="img-div">
-                              <i class="fa-regular fa-heart"></i>
-                              <img class="img">
-                          </div>
-                          <div class="content">
-                              <p style="color: red;">only 1 is left</p>
-                              <h5>productname</h2>
-                                  <h2>Price</h2>  
-                              </div>
-                          </div>   -->
+            <button class="carousel-product-prev-btn" id="diamond-carousel-product-prevBtn">&#10094;</button>
+            <div class="carousel-product-inner-card-container" id="diamond-carousel-product-inner-card-container">
+              <div class="carousel-product-card-wrapper" id="diamond-carousel-product-cardWrapper">
+                  <!-- <div class="card-div">
+                      <div class="img-div">
+                          <i class="fa-regular fa-heart"></i>
+                          <img class="img">
                       </div>
-                      <button class="carousel-product-next-btn" id="diamond-carousel-product-nextBtn">&#10095;</button>
-                  </div>
-              </div>
+                      <div class="content">
+                          <p style="color: red;">only 1 is left</p>
+                          <h5>productname</h2>
+                              <h2>Price</h2>  
+                          </div>
+                      </div>   -->
+                </div>
+                <button class="carousel-product-next-btn" id="diamond-carousel-product-nextBtn">&#10095;</button>
+            </div>
           </div>
+        </div>
         <div class="carousel-product-card-container-dot " id="diamond-carousel-product-carouselDots"></div>
       </section>
 
-      <!-- <section style="padding: 10px"> -->
-        <!-- <div class="main-sec-2">
-          <div class="img-sec-1">
-            <div class="div-img-sec">
-              <div class="img-https">
-                <img
-                  class="tile-image w-100 aspect-ratio-img aspect-ratio"
-                  src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw211ebf36/images/hi-res/51D4FFNADAA00_1.jpg?sw=360&amp;sh=360"
-                  alt="Pretty Heart Necklace"
-                  title="Pretty Heart Necklace,"
-                  onerror="this.src='/on/demandware.static/-/Sites-Tanishq-site-catalog/default/v7e4151d8817101406b98615b73a8da6b6467c4c1/noimage/medium_missing.svg'"
-                  loading="lazy"
-                />
-              </div>
-              <div class="pose-i">
-                <i class="fa-regular fa-heart fa-xl"></i>
-              </div>
-              <div class="img-pose">
-                <span>Only 1 left in stock</span>
-                <h5>Pretty Heart Necklace</h5>
-                <p>₹ 84289</p>
-              </div>
-            </div>
-
-            <div class="div-img-sec">
-              <div class="img-https">
-                <img
-                  class="tile-image w-100 aspect-ratio-img aspect-ratio"
-                  src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw26374f16/images/hi-res/51D4FFNAEAA00_1.jpg?sw=360&amp;sh=360"
-                  alt="Adorable Heart Necklace"
-                  title="Adorable Heart Necklace,"
-                  onerror="this.src='/on/demandware.static/-/Sites-Tanishq-site-catalog/default/v7e4151d8817101406b98615b73a8da6b6467c4c1/noimage/medium_missing.svg'"
-                  loading="lazy"
-                />
-              </div>
-              <div class="pos-i">
-                <i class="fa-regular fa-heart fa-xl"></i>
-              </div>
-              <div class="img-pose">
-                <span>Only 1 left in stock</span>
-                <h5>Lariat Gold Necklace</h5>
-                <p>₹70932</p>
-              </div>
-            </div>
-
-            <div class="div-img-sec">
-              <div class="img-https">
-                <img
-                  class="tile-image w-100 aspect-ratio-img aspect-ratio"
-                  src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dw984ecb24/images/hi-res/51F2TRBEUAA00_1.jpg?sw=360&amp;sh=360"
-                  alt="Magnificent Tridev Rakhi Bracelet"
-                  title="Magnificent Tridev Rakhi Bracelet,"
-                  onerror="this.src='/on/demandware.static/-/Sites-Tanishq-site-catalog/default/v7e4151d8817101406b98615b73a8da6b6467c4c1/noimage/medium_missing.svg'"
-                  loading="lazy"
-                />
-              </div>
-              <div class="pos-i">
-                <i class="fa-regular fa-heart fa-xl"></i>
-              </div>
-              <div class="img-pose">
-                <span>Only 1 left in stock</span>
-                <h5>Pretty Heart Necklace</h5>
-                <p>₹45999</p>
-              </div>
-            </div>
-
-            <div class="div-img-sec">
-              <div class="img-https">
-                <img
-                  class="tile-image w-100 aspect-ratio-img aspect-ratio"
-                  src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwbb843291/images/hi-res/51M3PTNPMAA00_1.jpg?sw=360&amp;sh=360"
-                  alt="Chic Link Necklace"
-                  title="Chic Link Necklace,"
-                  onerror="this.src='/on/demandware.static/-/Sites-Tanishq-site-catalog/default/v7e4151d8817101406b98615b73a8da6b6467c4c1/noimage/medium_missing.svg'"
-                  loading="lazy"
-                />
-              </div>
-              <div class="pos-i">
-                <i class="fa-regular fa-heart fa-xl"></i>
-              </div>
-              <div class="img-pose">
-                <span>Only 1 left in stock</span>
-                <h5>Pretty Heart Necklace</h5>
-                <p>₹ 752529</p>
-              </div>
-            </div>
-          </div>
-        </div> -->
-      <!-- </section> -->
-
+     
       <section>
         <div class="img-fsize">
           <img src="../img/images/gift-adv.webp" alt="" />
@@ -1152,7 +983,8 @@
    <script src="../js/Home.js"></script>
    <script src="../js/Carousel.js"></script>
    <script src="../js/nav.js"></script>
-   <script src="../js/DiamondCarousel.js"></script>
-   <script src="../js/GoldCarousel.js"></script>
+   <script src="../js/ProductCarousel.js"></script>
+   <!-- <script src="../js/DiamondCarousel.js"></script>
+   <script src="../js/GoldCarousel.js"></script> -->
 </body>
 </html>
