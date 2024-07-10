@@ -13,8 +13,7 @@ document.addEventListener("DOMContentLoaded", async (event) =>{
         }
         const jsonData = await response.json();
 
-        console.log(jsonData)
-
+      
         let currentIndex = 0;
 
         
@@ -48,10 +47,10 @@ document.addEventListener("DOMContentLoaded", async (event) =>{
             stockText.textContent = `Only 1 is left`; 
             
             const productName = document.createElement("h6");
-            productName.textContent = product.title; 
+            productName.innerHTML = `${product.title}`; 
             productName.className = "text-nowrap text-truncate"
             const price = document.createElement("h5");
-            price.textContent = `${product.price} `; 
+            price.innerHTML = `&#8377; ${product.price} `; 
             contentDiv.appendChild(stockText);
             contentDiv.appendChild(productName);
             contentDiv.appendChild(price);
@@ -75,7 +74,7 @@ document.addEventListener("DOMContentLoaded", async (event) =>{
             // const cardWidth = document.querySelector('.card-div').offsetWidth;
             const cardWidth = document.querySelector('.carousel-product-card-div').offsetWidth + 2 * parseFloat(getComputedStyle(document.querySelector('.carousel-product-card-div')).marginRight);
             
-            console.log(cardWidth);
+            // console.log(cardWidth);
             const offset = -currentIndex * cardWidth;
             goldCardWrapper.style.transform = `translateX(${offset}px)`;
 

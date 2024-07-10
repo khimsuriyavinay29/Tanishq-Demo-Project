@@ -3,46 +3,21 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 .text-tanishq-color{
-    color: rgb(164, 8, 8);
-}
-.background-tanishq-color{
-    background-color: rgb(164, 8, 8);
-}
+    color:  rgb(132,44,48)
+  }
+  .background-tanishq-color{
+    background-color: 
+    rgb(132,44,48)
+  }
 
-.category-type-Card{
-    height: auto;
-    display: flex;
-}
+  .tanishq-official-background-color{
+    background-color: #f2e9e9;
+  }
 
-.category-type-Card:hover{
-   cursor: pointer;
-}
-.category-type-Card-heading:hover{
-    box-shadow: 2px 2px 5px rgb(239, 235, 235), -2px 2px 5px rgb(239, 235, 235);
-}
-
-.category-type-Card-wrapper{
-    width: 80%;
-}
-.category-type-Card-explore{
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 1s;
-}
-.category-type-Card-explore p{
-    transition: all 1s;
-}
-.category-type-Card-explore:hover p:first-child {
-    transform: translateX(-50px); /* Separate elements on hover */
-}
-.category-type-Card-explore:hover p:last-child {
-    transform: translateX(50px); /* Separate elements on hover */
-}
-
-@media (max-width: 992px){
-    .category-type-Card-wrapper{
-        width: 100%;
-    }
-}
+  .after-login-account{
+    width: 250px;
+    border-radius: 15px;
+    padding: 35px 10px;
+  }

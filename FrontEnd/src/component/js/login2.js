@@ -4,11 +4,12 @@ document.getElementById("loginForm").addEventListener("submit",function(event){
     event.preventDefault();
 
     const loginData = {
-        userName: document.getElementById('userName').value,
-        password: document.getElementById('userPassword').value
+        userName: document.getElementById('loginUserName').value,
+        password: document.getElementById('loginUserPassword').value
     };
-    // console.log(localStorage.getItem("accessTokenAdmin"))
+   
     localStorage.setItem("accessTokenAdmin", "");    
+    localStorage.setItem("accessTokenUser", "");    
 
     fetch("http://localhost:4500/api/auth/login",{
         method : "POST",
@@ -32,7 +33,7 @@ document.getElementById("loginForm").addEventListener("submit",function(event){
             if (data && data.data) {
                 const isadmin = data.data.isAdmin;
                 let accessToken = data.data.accessToken;
-                console.log("----",accessToken)
+                // console.log("----",accessToken)
                 if (isadmin) {
                     localStorage.setItem("accessTokenAdmin", accessToken);
                     window.location.href = './addProduct.html';
@@ -46,17 +47,3 @@ document.getElementById("loginForm").addEventListener("submit",function(event){
         })
     })
     
-// const isadmin= data.data.isAdmin;
-// // console.log(data);
-
-// console.log(data);
-
-// if(isadmin){
-//         window.location.href = './form-product.html';
-//         localStorage.setItem("accessTokenAdmin",data.data.accessToken);
-    
-//     }
-//     else{
-//         window.location.href = './home.html';
-//     localStorage.setItem("accessTokenuser",data.data.accessToken);
-// }
