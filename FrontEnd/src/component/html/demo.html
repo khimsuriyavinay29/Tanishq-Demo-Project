@@ -13,64 +13,21 @@
     <link rel="stylesheet" href="../css/demo.css" />
 </head>
 <body>
-
-    <section class="w-100 px-2 tanishq-official-background-color">
-        <div class="container-fluid">
-            <div class="row d-flex justify-content-between align-items-center">
-                <div class="col-lg-2 col-4 d-flex pe-4 justify-content-start justify-content-lg-end  align-items-center symbol">
-                    <span class="menu-icon text-tanishq-color fs-1">&#9776;</span>
-                    <img src="../img/tanishq_logo_full_screen.svg" style="width: 75px;height: 75px;">
-                </div>
-                <div class="col-lg-6 col-12 py-1 rounded-2 bg-white searchbar-col px-3 ">
-                    <div class="row bg-white rounded-2">
-                        <div class="col-lg-9 col-md-10 col-9  d-flex align-items-center">
-                            <i class="fa-solid fa-magnifying-glass  mx-1 fs-4 text-tanishq-color"></i>
-                            <input type="text" class="form-control border-0 searchbar" placeholder="Search...">
-                        </div>
-                        <div class="col-lg-3 col-md-2 col-3 d-flex ps-4 pe-0 align-items-center border justify-content-center">
-                            <i class="fa-solid navigation-icons  fs-4 fa-camera text-tanishq-color"></i>
-                            <i class="fa-solid navigation-icons  fs-4 fa-microphone text-tanishq-color"></i>
-                            <i class="fa-solid navigation-icons  fs-4 fa-magnifying-glass text-tanishq-color"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-5 text-tanishq-color pe-5 ps-2 position-relative  nav-option d-flex justify-content-between align-items-center">
-                    <div class="nav-option-div">
-                        <img src="../img/dailywear.svg" style="width: 35px; height: 20px;">
-                        <p class="nav-option-name m-0">DAILYWEARS</p>
-                    </div>
-                    <div class="nav-option-div">
-                        <i class="fa-solid fa-shop"></i>
-                        <p class="nav-option-name m-0">STORE</p>
-                    </div>
-                    <div class="nav-option-div nav-account-option-div fa-user-div">
-                        <i class="fa-regular fa-user"></i>
-                        <p class="nav-option-name m-0">ACCOUNT</p>
-                        <div class="nav-account-option rounded-2 border container-fluid text-center p-3 bg-white text-tanishq-color">
-                            <div>
-                             <h1 class=" mb-3" >My Account</h1>
-                             <p class="fs-6">LOGIN TO ACCESS YOUR ACCOUNT</p>
-                             <div class="d-flex justify-content-evenly my-2 align-items-center">
-                                 <button class="btn border py-1 px-3">Log In</button>
-                                 <button class="btn border py-1 px-3 text-white background-tanishq-color">Sign Up</button>
-                             </div>
-                             <p class="fs-6">CLICK HERE TO CONTACT US</p>
-                            </div> 
-                         </div>
-                    </div>
-                    <div class="nav-option-div">
-                        <i class="fa-regular fa-heart"></i>
-                        <p class="nav-option-name m-0">WISHLIST</p>
-                    </div>
-                    <div class="nav-option-div">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <p class="nav-option-name m-0">CART</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     
+    <div class="after-login-account text-tanishq-color container d-flex flex-column justify-content-center align-items-center border border-primary">
+        <div class="row border w-100">
+            <div class=" d-flex justify-content-center  p-2 align-items-center">
+                <img class="user-image tanishq-official-background-color rounded-circle p-3" src="../img/tanishq_logo._full_screen.svg" style="width: 75px; height: 75px;">
+            </div>
+            <div class="text-center h4">username</div>
+        </div>
+        <div class="row mt-3 h6">
+            <p id="delete-account">Delete Your Account</p>
+            <p>Log Out</p>
+        </div>
+    </div>
+    
+    <script src="../../reusableComponent/ContryCode.js"></script>
     <script src="../js/demo.js"></script>
 </body>
 </html>

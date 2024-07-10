@@ -29,46 +29,58 @@
                 </div>
                 <div class=" col-lg-5 col-xl-6 col-12 py-lg-1 rounded-2 bg-white searchbar-col px-3">
                     <div class="row bg-white rounded-2">
-                        <div class="col-lg-8 col-md-9 col-9  d-flex align-items-center">
+                        <div class="col-lg-8 col-md-8 col-8  d-flex align-items-center">
                             <i class="fa-solid searchbar-search fa-magnifying-glass  mx-1 fs-4 text-tanishq-color"></i>
                             <input type="text" class="form-control border-0 searchbar" placeholder="Search...">
                         </div>
-                        <div class="col-lg-4 col-md-3 col-3  d-flex ps-5 pe-0 align-items-center justify-content-center">
+                        <div class="col-lg-4 col-md-4 col-4  d-flex ps-5 pe-0 align-items-center justify-content-center">
                             <i class="fa-solid navigation-icons px-2 fs-4 fa-camera text-tanishq-color"></i>
                             <i class="fa-solid navigation-icons px-2 fs-4 fa-microphone text-tanishq-color"></i>
                             <i class="fa-solid navigation-icons px-2 fs-4 fa-magnifying-glass text-tanishq-color"></i>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-5 col-xl-4 col-5 text-tanishq-color pe-5 ps-2 position-relative  nav-option d-flex justify-content-lg-start justify-content-end align-items-center">
-                    <div class="nav-option-div">
-                        <img src="../img/dailywear.svg" style="width: 50%; height: 30%;">
+                <div class="col-lg-5 col-xl-4 col-5 text-tanishq-color pe-lg-5 ps-2  nav-option d-flex justify-content-lg-start justify-content-end align-items-center">
+                    <div class="nav-option-div py-4 px-2 d-flex flex-column align-items-lg-center align-items-end">
+                        <img src="../img/dailywear.svg" class="daily-wear">
                         <p class="nav-option-name m-0">DAILYWEARS</p>
                     </div>
-                    <div class="nav-option-div">
+                    <div class="nav-option-div py-4 px-2">
                         <i class="fa-solid nav-icon fa-shop"></i>
                         <p class="nav-option-name m-0">STORE</p>
                     </div>
-                    <div class="nav-option-div nav-account-option-div fa-user-div">
+                    <div class="nav-option-div py-4 px-2 nav-account-option-div position-relative fa-user-div">
                         <i class="fa-regular nav-icon fa-user"></i>
                         <p class="nav-option-name m-0">ACCOUNT</p>
-                        <div class="nav-account-option rounded-2 border container-fluid text-center p-3 bg-white text-tanishq-color">
+                        <div class="nav-account-option border container-fluid text-center p-3 bg-white text-tanishq-color">
                             <div>
                              <h1 class=" mb-3" >My Account</h1>
                              <p class="fs-6">LOGIN TO ACCESS YOUR ACCOUNT</p>
                              <div class="d-flex justify-content-evenly my-2 align-items-center">
-                                 <button class="btn border py-1 px-3">Log In</button>
-                                 <button class="btn border py-1 px-3 text-white background-tanishq-color">Sign Up</button>
+                                 <button class="btn border py-1 px-3" id="loginButton">Log In</button>
+                                 <button class="btn border py-1 px-3 text-white background-tanishq-color" id="signUpButton">Sign Up</button>
                              </div>
                              <p class="fs-6">CLICK HERE TO CONTACT US</p>
                             </div> 
                          </div>
+                         <div class="after-login-account text-tanishq-color container border">
+                          <div class="row border w-100">
+                              <div class=" d-flex justify-content-center  p-2 align-items-center">
+                                  <img class="user-image tanishq-official-background-color rounded-circle p-3" src="../img/tanishq_logo._full_screen.svg" style="width: 75px; height: 75px;">
+                              </div>
+                              <div class="text-center h4" id="after-login-account-userName"></div>
+                          </div>
+                          <div class="row mt-3 text-start h6">
+                              <p id="delete-account">Delete Your Account</p>
+                              <p id="userLogOut">Log Out</p>
+                          </div>
+                        </div>
                     </div>
-                    <div class="nav-option-div">
+                    <div class="nav-option-div py-4 px-2">
                       <i class="fa-solid nav-icon fa-heart-pulse"></i>
                         <p class="nav-option-name m-0">WISHLIST</p>
                     </div>
-                    <div class="nav-option-div position-relative">
+                    <div class="nav-option-div py-4 px-2 position-relative">
                         <span class="cart-span position-absolute background-tanishq-color">0</span>
                         <i class="fa-solid nav-icon fa-cart-shopping "></i>
                         <p class="nav-option-name m-0">CART</p>
@@ -79,6 +91,97 @@
 
       </section>
 
+      <div class="modal-overlay " id="modalOverlay"></div>
+      <div class="modal-container " id="modalContainer">
+        
+        <div class="container-fluid tanishq_login border border-2 text-center position-relative">
+          <span class="close-modal-login" id="closeModal">&times;</span>
+          <div class="row tanishq_login_row ">
+              <div class="col-12 col-lg-8 tanishq_login-div tanishq-official-background-color d-flex justify-content-center py-5 flex-column px-4">
+                  <h1 class="mb-4 text-tanishq-color"> Login</h1>
+                  <div>
+                      <form action="" id="loginForm">
+                          <div class="mb-3 mt-3">
+                              <label for="loginUserName" class="form-label w-100 text-start ms-1">User Name:</label>
+                              <input type="text" class="form-control" id="loginUserName" placeholder="Enter your username" name="userName">
+                          </div>
+                          <div class="mb-3">
+                              <label for="loginUserPassword" class="form-label w-100 text-start ms-1">Password:</label>
+                              <input type="password" class="form-control" id="loginUserPassword" placeholder="Enter strong password" name="UserPassword">
+                          </div>
+                          <div class="form-check mb-3 d-flex justify-content-start">
+                              <label class="form-check-label">
+                                  <input class="form-check-input" id="loginRemember" type="checkbox" name="remember"> Remember me
+                              </label>
+                          </div>
+                          <button type="submit" class="btn btn-primary w-100">Submit</button>
+                      </form>
+                  </div>
+              </div>
+              <div class="col-4 d-none d-lg-block p-0">
+                  <img src="../img/tanishq_login.webp" class="w-100 login_img">
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay-signUp p-5" id="modalOverlayl-signUp"></div>
+      <div class="modal-container-signUp p-5" id="modalContainerl-signUp">
+        <div class="container-fluid tanishq-signUp border border-2 tanishq-official-background-color text-center position-relative">
+          <span class="close-modal-signIp" id="closeModal-signUp">&times;</span>
+          <div class="row">
+              
+              <div class="col-12 col-lg-8 tanishq-signUp-div  d-flex justify-content-center py-5 flex-column px-4">
+                  <h1 class="mb-4 text-tanishq-color"> Sign Up</h1>
+                  <div>
+                    <form id="userRegisteForm">
+                        <div class="mb-2">
+                            <label for="registerUserEmail" class="form-label w-100 text-start ps-2 mb-1">Email address</label>
+                            <input type="email" class="form-control" id="registerUserEmail" placeholder="Enter your email" required>
+                        </div>
+                        <div class="mb-2">
+                            <label for="registerUserName" class="form-label w-100 text-start ps-2 mb-1">Username</label>
+                            <input type="text" class="form-control" id="registerUserName" placeholder="Enter your username" required>
+                        </div>
+                        <div class="mb-2">
+                            <label for="registerUserPassword" class="form-label w-100 text-start ps-2 mb-1">Password</label>
+                            <input type="password" class="form-control" id="registerUserPassword" placeholder="Enter your password" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="registerUserConirmPassword" class="form-label w-100 text-start ps-2 mb-1">Password</label>
+                            <input type="password" class="form-control" id="registerUserConirmPassword" placeholder="Confirm your password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                    </form>
+                  </div>
+              </div>
+              <div class="col-4 d-none d-lg-block p-0 ">
+                <img src="../img/new-login-signup.webp" class="w-100 signIp_img">
+            </div>
+          </div>
+      </div>
+      </div>
+          <!-- <h1 class="mb-4 text-tanishq-color"> Login</h1>
+            <form action="/action_page.php" id="loginForm">
+                <div class="mb-3 mt-3">
+                    <label for="loginUserName" class="form-label w-100 text-start ms-1">Email:</label>
+                    <input type="text" class="form-control" id="loginUserName" placeholder="Enter your username" name="userName">
+                </div>
+                <div class="mb-3">
+                    <label for="loginUserPassword" class="form-label w-100 text-start ms-1">Password:</label>
+                    <input type="password" class="form-control" id="loginUserPassword" placeholder="Enter strong password" name="UserPassword">
+                </div>
+                <div class="form-check mb-3 d-flex justify-content-start">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="remember"> Remember me
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Submit</button>
+            </form>
+        </div> -->
+    
+
+
       <section>
         <div class="category-type-container-nav bg-white w-100">
           <div class="container bg-transparent mx-2">
@@ -86,8 +189,7 @@
   
               </ul>
           </div>
-      </div>
-
+        </div>
       </section>
 
       <section>
@@ -169,7 +271,7 @@
                     
                 </div>
             </div>
-        </div>
+          </div>
           </div>
           <!-- <div class="category-type-Card col-4 col-lg-2">
               <div class="w-100 rounded-1 border border-2">
@@ -928,62 +1030,63 @@
         }
       }
 
-      function arr_sec() {
-        var click_1 = document.getElementById("click_1");
-        if (click_1.style.display === "flex") {
-          click_1.style.display = "none";
-          document.querySelector(".minus").innerHTML = "+";
-        } else {
-          click_1.style.display = "flex";
-          document.querySelector(".minus").innerHTML = "-";
-        }
-      }
-      function arr_sec_2() {
-        var click_2 = document.getElementById("click_2");
-        if (click_2.style.display === "flex") {
-          click_2.style.display = "none";
-          document.querySelector(".minus_2").innerHTML = "+";
-        } else {
-          click_2.style.display = "flex";
-          document.querySelector(".minus_2").innerHTML = "-";
-        }
-      }
+      // function arr_sec() {
+      //   var click_1 = document.getElementById("click_1");
+      //   if (click_1.style.display === "flex") {
+      //     click_1.style.display = "none";
+      //     document.querySelector(".minus").innerHTML = "+";
+      //   } else {
+      //     click_1.style.display = "flex";
+      //     document.querySelector(".minus").innerHTML = "-";
+      //   }
+      // }
+      // function arr_sec_2() {
+      //   var click_2 = document.getElementById("click_2");
+      //   if (click_2.style.display === "flex") {
+      //     click_2.style.display = "none";
+      //     document.querySelector(".minus_2").innerHTML = "+";
+      //   } else {
+      //     click_2.style.display = "flex";
+      //     document.querySelector(".minus_2").innerHTML = "-";
+      //   }
+      // }
 
-      function arr_sec_3() {
-        var click_3 = document.getElementById("click_3");
-        if (click_3.style.display === "flex") {
-          click_3.style.display = "none";
-          document.querySelector(".minus_3").innerHTML = "+";
-        } else {
-          click_3.style.display = "flex";
-          document.querySelector(".minus_3").innerHTML = "-";
-        }
-      }
-      document.addEventListener("DOMContentLoaded", function () {
-        var accountBtn = document.getElementById("accountBtn");
-        var mkHide = accountBtn.querySelector(".mk-hide");
+      // function arr_sec_3() {
+      //   var click_3 = document.getElementById("click_3");
+      //   if (click_3.style.display === "flex") {
+      //     click_3.style.display = "none";
+      //     document.querySelector(".minus_3").innerHTML = "+";
+      //   } else {
+      //     click_3.style.display = "flex";
+      //     document.querySelector(".minus_3").innerHTML = "-";
+      //   }
+      // }
+      // document.addEventListener("DOMContentLoaded", function () {
+      //   var accountBtn = document.getElementById("accountBtn");
+      //   var mkHide = accountBtn.querySelector(".mk-hide");
 
-        accountBtn.addEventListener("click", function (event) {
-          event.preventDefault(); // Prevent the default action of the anchor tag
-          if (mkHide.style.display === "none") {
-            mkHide.style.display = "contents";
-          } else {
-            mkHide.style.display = "none";
-          }
-        });
+      //   accountBtn.addEventListener("click", function (event) {
+      //     event.preventDefault(); // Prevent the default action of the anchor tag
+      //     if (mkHide.style.display === "none") {
+      //       mkHide.style.display = "contents";
+      //     } else {
+      //       mkHide.style.display = "none";
+      //     }
+      //   });
 
-        // Close the mk-hide div when clicking outside of it
-        document.addEventListener("click", function (event) {
-          if (!accountBtn.contains(event.target)) {
-            mkHide.style.display = "none";
-          }
-        });
-      });
+      //   // Close the mk-hide div when clicking outside of it
+      //   document.addEventListener("click", function (event) {
+      //     if (!accountBtn.contains(event.target)) {
+      //       mkHide.style.display = "none";
+      //     }
+      //   });
+      // });
     </script>
    <script src="../js/Home.js"></script>
    <script src="../js/Carousel.js"></script>
    <script src="../js/nav.js"></script>
    <script src="../js/ProductCarousel.js"></script>
+   <!-- <script src="../js/login2.js"></script> -->
    <!-- <script src="../js/DiamondCarousel.js"></script>
    <script src="../js/GoldCarousel.js"></script> -->
 </body>

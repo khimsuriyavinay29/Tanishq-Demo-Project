@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
                 carousel.wrapper.style.transform = `translateX(${offset}px)`;
 
                 document.querySelectorAll('.carousel-product-dot').forEach((dot, index) => {
-                    console.log('Dot index:', index, 'Current index:', currentIndex); // Debugging
+                    // console.log('Dot index:', index, 'Current index:', currentIndex); // Debugging
                     if (index === currentIndex) {
                         dot.classList.add('active');
                     } else {
